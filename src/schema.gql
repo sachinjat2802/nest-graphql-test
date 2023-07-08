@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+}
+
+type Query {
+  user(email: String!): User!
+}
+
+type User {
+  address: String!
+  city: String!
+  country: String!
+  email: String!
+  gender: String!
+  isBlocked: Boolean!
+  isDeleted: Boolean!
+  isEmailVerified: Boolean!
+  isPhoneVerified: Boolean!
+  isProfileCompleted: Boolean!
+  isVerified: Boolean!
+  name: String!
+  password: String!
+  phone: String!
+  pincode: String!
+  profilePic: String!
+  role: String!
+  state: String!
+  status: String!
+}
