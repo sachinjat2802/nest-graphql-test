@@ -13,7 +13,7 @@ export class UsersService {
     return user.save();
   }
 
-  async getUserByEmail(email: string): Promise<User> {
+  async findByEmail(email: string): Promise<User> {
     console.log('working', email);
     return this.userModel.findOne({ email }).exec();
   }

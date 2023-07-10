@@ -7,7 +7,7 @@ import { Document } from 'mongoose';
 @Schema({ timestamps: true })
 export class User extends Document {
   @Field()
-  @Prop({ required: true })
+  @Prop({ required: true, unique: true })
   email: string;
 
   @Field()
@@ -81,6 +81,9 @@ export class User extends Document {
   @Field()
   @Prop({ required: false, default: false })
   isProfileCompleted: boolean;
+
+  @Field()
+  accessToken: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

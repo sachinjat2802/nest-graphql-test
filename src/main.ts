@@ -1,13 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as dotenv from 'dotenv';
+import * as passport from 'passport';
+
 dotenv.config();
 
-class App {
-  public static async main(port) {
-    const app = await NestFactory.create(AppModule);
-    await app.listen(port);
-  }
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.use(passport.initialize());
+  await app.listen(process.env.PORT);
 }
-
-App.main(process.env.PORT);
+bootstrap();

@@ -8,7 +8,8 @@ input CreateUserInput {
 }
 
 type Mutation {
-  createUser(input: CreateUserInput!): User!
+  loginUser(input: CreateUserInput!): User!
+  registerUser(input: CreateUserInput!): User!
 }
 
 type Query {
@@ -16,6 +17,7 @@ type Query {
 }
 
 type User {
+  accessToken: String!
   address: String!
   city: String!
   country: String!
