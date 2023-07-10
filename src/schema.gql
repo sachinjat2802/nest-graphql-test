@@ -8,12 +8,34 @@ input CreateUserInput {
 }
 
 type Mutation {
+  deleteUser(id: String!): User!
   loginUser(input: CreateUserInput!): User!
   registerUser(input: CreateUserInput!): User!
+  updateUser(id: String!, input: UpdateUserInput!): User!
 }
 
 type Query {
   user(email: String!): User!
+}
+
+input UpdateUserInput {
+  address: String
+  city: String
+  country: String
+  gender: String
+  isBlocked: Boolean
+  isDeleted: Boolean
+  isEmailVerified: Boolean
+  isPhoneVerified: Boolean
+  isProfileCompleted: Boolean
+  isVerified: Boolean
+  name: String
+  phone: String
+  pincode: String
+  profilePic: String
+  role: String
+  state: String
+  status: String
 }
 
 type User {
@@ -23,6 +45,7 @@ type User {
   country: String!
   email: String!
   gender: String!
+  id: String!
   isBlocked: Boolean!
   isDeleted: Boolean!
   isEmailVerified: Boolean!

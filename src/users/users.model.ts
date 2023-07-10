@@ -7,6 +7,9 @@ import { Document } from 'mongoose';
 @Schema({ timestamps: true })
 export class User extends Document {
   @Field()
+  id: string;
+
+  @Field()
   @Prop({ required: true, unique: true })
   email: string;
 
