@@ -2,20 +2,52 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreatePrOductInput {
+  name: String!
+  type: String!
+}
+
 input CreateUserInput {
   email: String!
   password: String!
 }
 
 type Mutation {
+  createProduct(input: CreatePrOductInput!): Product!
+  deleteProduct(id: String!): Product!
   deleteUser(id: String!): User!
   loginUser(input: CreateUserInput!): User!
   registerUser(input: CreateUserInput!): User!
+  updateProduct(id: String!, input: UpdateProductInput!): Product!
   updateUser(id: String!, input: UpdateUserInput!): User!
 }
 
+type Product {
+  category: String!
+  description: String!
+  image: String!
+  isDeleted: Boolean!
+  name: String!
+  price: String!
+  rating: String!
+  status: String!
+  type: String!
+}
+
 type Query {
+  product(id: String!): Product!
   user(email: String!): User!
+}
+
+input UpdateProductInput {
+  category: String!
+  description: String!
+  image: String!
+  name: String!
+  price: String!
+  rating: String!
+  status: String!
+  type: String!
 }
 
 input UpdateUserInput {
