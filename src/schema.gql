@@ -7,6 +7,11 @@ input CreatePrOductInput {
   type: String!
 }
 
+input CreateServicesInput {
+  name: String!
+  type: String!
+}
+
 input CreateUserInput {
   email: String!
   password: String!
@@ -20,6 +25,10 @@ type Mutation {
   registerUser(input: CreateUserInput!): User!
   updateProduct(id: String!, input: UpdateProductInput!): Product!
   updateUser(id: String!, input: UpdateUserInput!): User!
+  
+  createServicesinput: CreateServicesInput!): Services!
+  deleteServices(id: String!): Services!
+  updateProduct(id: String!, input: UpdateServicesInput!): Services!
 }
 
 type Product {
@@ -33,6 +42,7 @@ type Product {
   status: String!
   type: String!
 }
+
 
 type Query {
   product(id: String!): Product!
@@ -92,4 +102,25 @@ type User {
   role: String!
   state: String!
   status: String!
+}
+
+type Services {
+  category: String!
+  description: String!
+  isDeleted: Boolean!
+  name: String!
+  price: String!
+  rating: String!
+  status: String!
+  type: String!
+}
+
+input UpdateServicesInput {
+  category: String!
+  description: String!
+  name: String!
+  price: String!
+  rating: String!
+  status: String!
+  type: String!
 }
