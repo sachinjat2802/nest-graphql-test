@@ -1,0 +1,11 @@
+/*eslint-disable */
+import { InputType, Field } from '@nestjs/graphql';
+
+@InputType()
+export class CreateServicesInput {
+  @Field()
+  name: string;
+
+  @Field()
+  type: string;
+}
